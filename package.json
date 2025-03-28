@@ -1,0 +1,19 @@
+{
+  "name": "stress-test-k6",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/k6": "^1.0.2"
+  },
+  "dependencies": {
+    "typescript": "^5.8.2"
+  }
+}
