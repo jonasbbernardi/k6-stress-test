@@ -1,5 +1,9 @@
 .env
 dist
 node_modules
-screenshots/*
-!screenshots/.gitkeep
+
+results/*
+!results/screenshots/
+results/screenshots/*
+
+!**/.gitkeep
