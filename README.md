@@ -22,8 +22,3 @@ Docker run:
 - `--rm` - Remove o container criado após a execução;
 - `-i`   - Executa em modo interativo;
 - `-v`   - Monta um volume a partir de uma pasta local (Formato `<pasta local>:<volume no container>`).
-
-# InfluxDb
-
-user: admin
-pass: Duo@1234
