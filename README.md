@@ -64,14 +64,18 @@ Configure datasource influxdb:
 - Set only "With credentials" flag on Auth session;
 - Set header "Authorization" with influxdb token in format "Token [influxdbtoken]".<br> Ex: `Authorization: Token xyz_abc==`
 
+With grafana configured, [download k6 dashboard here][k6-dashboard] and import it in "Dashboards->New->Import".
+
 ## References
 
-Influxdb on docker: [influx-docker][influx-docker]
-Grafana configurations: [grafana-configs][grafana-configs]
-Grafana dashboards: [grafana-dashs][grafana-dashs]
+- Influxdb on docker: [influx-docker][influx-docker]
+- Grafana configurations: [grafana-configs][grafana-configs]
+- Grafana dashboards: [grafana-dashs][grafana-dashs]
+- K6 grafana dashboard: [k6-dashboard][k6-dashboard]
 
 <!-- Refereces -->
 
 [influx-docker]: https://medium.com/@techworldthink/installing-influxdb-v2-with-docker-on-ubuntu-39a974c3cb40
 [grafana-configs]: https://grafana.com/docs/grafana/latest/setup-grafana/configure-grafana/
 [grafana-dashs]: https://grafana.com/grafana/dashboards/
+[k6-dashboard]: https://grafana.com/grafana/dashboards/2587-k6-load-testing-results/
