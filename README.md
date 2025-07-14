@@ -12,8 +12,8 @@ Stress test using grafana/k6 with docker.
 Before any container run, create shared network.
 
 ```bash
-# Create a network to influxdb
-docker network create influxdb2
+# Create a network to test
+docker network create stresstest
 ```
 
 ## InfluxDb
@@ -25,7 +25,7 @@ The first container must be influxdb (version 2), to have data ingested.
 docker pull influxdb:2
 
 # Run on port 8086
-docker run -d --name=influxdb2 -p 8086:8086 influxdb:2
+docker run -d --network=stresstest --name=influxdb2 -p 8086:8086 influxdb:2
 ```
 
 Then access UI and run the "get started" on browser to configure it.
@@ -40,7 +40,7 @@ docker build -f Dockerfile-build -t k6-build .
 # Build k6 image
 docker build -t k6-test .
 # Run test and save to influxdb
-docker run --rm --network=influxdb2 --env-file=.env --name=k6-test -i -v $PWD:/app k6-test
+docker run --rm --network=stresstest --env-file=.env --name=k6-test -i -v $PWD:/app k6-test
 ```
 
 Also, there is the `Dockerfile-out-json` to run standalone with results locally only.
@@ -53,7 +53,7 @@ Using grafana open source (to use enterprise use image `grafana/grafana-enterpri
 # Pull grafana image
 docker pull grafana/grafana-oss
 # Run grafana locally
-docker run -d -p 3000:3000 --network=influxdb2 --name=grafana grafana/grafana-oss
+docker run -d --network=stresstest --name=grafana -p 3000:3000 grafana/grafana-oss
 ```
 
 Then access UI (user/pass: admin) and set a new password.
